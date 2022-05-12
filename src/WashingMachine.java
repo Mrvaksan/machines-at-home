@@ -57,15 +57,15 @@ public class WashingMachine {
 
         if (isStarted) {
             if (isRunning) {
-                status = "Ã‡alÄ±ÅŸÄ±yor";
+                status = "Çalışıyor";
             } else {
-                status = "DuraklatÄ±ldÄ±";
+                status = "Duraklatıldı";
             }
         } else {
-            status = "Ã‡alÄ±ÅŸmÄ±yor";
+            status = "Çalışmıyor";
         }
 
-        System.out.printf("%s: [SÄ±caklÄ±k %d Â°C, Devir: %d rpm, SÃ¼re: %d dk]\n", status, temperature, rpm, remainingTime);
+        System.out.printf("%s: [Sıcaklık %d °C, Devir: %d rpm, Süre: %d dk]\n", status, temperature, rpm, remainingTime);
     }
 
     //getter for temperature
@@ -76,7 +76,7 @@ public class WashingMachine {
     //setter for temperature
     public void setTemperature(int newTemperature) {
         if (this.isRunning) {
-            System.out.println("Hata! Makine Ã§alÄ±ÅŸÄ±rken sÄ±caklÄ±k deÄŸiÅŸtirilemez");
+            System.out.println("Hata! Makine çalışırken sıcaklık değiştirilemez");
         } else {
             this.temperature = newTemperature;
         }
@@ -88,7 +88,7 @@ public class WashingMachine {
 
     public void setRpm(int rpm) {
         if (this.isRunning) {
-            System.out.println("Hata! Makine Ã§alÄ±ÅŸÄ±rken devir ayarÄ± deÄŸiÅŸtirilemez");
+            System.out.println("Hata! Makine çalışırken devir ayarı değiştirilemez");
         } else {
             this.rpm = rpm;
         }
@@ -100,7 +100,7 @@ public class WashingMachine {
 
     public void setTimer(int timer) {
         if (this.isRunning) {
-            System.out.println("Hata! Makine Ã§alÄ±ÅŸÄ±rken sÃ¼re deÄŸiÅŸtirilemez");
+            System.out.println("Hata! Makine çalışırken süre değiştirilemez");
         } else {
             this.timer = timer;
             this.remainingTime = timer;
